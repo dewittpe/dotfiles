@@ -29,7 +29,7 @@ git config --global core.excludesfile ~/.gitignore_global
 
 ## git
 
-* [git-prompt.sh`](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+* [`git-prompt.sh`](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
   reports the current branch in the bash prompt.
 
 ## tmux
