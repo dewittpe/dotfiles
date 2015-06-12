@@ -1,10 +1,11 @@
 dotfiles
 ========
 
-A collection of dotfiles for bash, git, tmux, and vim.  Thank you
+A collection of dotfiles for bash, git, tmux, terminator, and vim.  
+
+Thank you
 [Grazfather](https://github.com/Grazfather/dotfiles).  The structure of this
 repository was based on your work.
-
 
 Running `init.sh` will symlink `$HOME/.{file}` to `$HOME/dotfiles/{file}`, and
 back up the original in `$HOME/dotfiles.bak/` as well as pull in all the vim
@@ -33,6 +34,9 @@ git config --global core.excludesfile ~/.gitignore_global
   reports the current branch in the bash prompt.
 
 ## tmux
+
+## terminator
+My preferred terminal emulator.
 
 ## vim 
 Plugins are managed by [pathogen](https://github.com/tpope/vim-pathogen).  Each
