@@ -9,7 +9,7 @@ repository was based on your work.
 
 Running `init.sh` will symlink `$HOME/.{file}` to `$HOME/dotfiles/{file}`, and
 back up the original in `$HOME/dotfiles.bak/` as well as pull in all the vim
-plugin submodules.
+plugin submodules.  Call `bash init.sh`, not `sh init.sh`.
 
 Make sure that `.bash_aliases` is called from your `.bashrc`:
 
