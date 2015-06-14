@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-r-plugin"]
 	path = vim/bundle/vim-r-plugin
 	url = git@github.com:vim-scripts/Vim-R-plugin.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git@github.com:ervandew/supertab
