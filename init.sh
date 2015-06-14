@@ -1,22 +1,15 @@
 #!/bin/bash
 
 dir=$HOME/dotfiles
-backup=$HOME/dotfiles.bak
 
-mkdir -p $backup
-
-for file in $dir/*
-do
-    filename=$(basename $file)
-            echo $file
-    if [[ "$filename" != "$(basename $0)" ]]; then
-        echo "Creating link for .$filename"
-        # Move existing dotfile to $backup
-        mv $HOME/.$filename $backup/
-        # Create symlink
-        ln -s $dir/$filename $HOME/.$filename
-    fi
-done
+# Set softlinks
+ln -s $dir/terminator.conf $HOME/.config/terminator/config
+ln -s $dir/vim             $HOME/.vim
+ln -s $dir/vimrc           $HOME/.vimrc
+ln -s $dir/bashrc          $HOME/.bashrc
+ln -s $dir/bashrc_aliases  $HOME/.bashrc_aliases
+ln -s $dir/git-prompt.sh   $HOME/.git-prompt.sh
+ln -s $dir/tmux.conf       $HOME/.tmux.conf
 
 # Pull in submodules
 git submodule init && git submodule update
