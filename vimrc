@@ -45,6 +45,7 @@ endif
 
 " Code Folding options
 set foldmethod=indent
+set foldlevel=3
 
 " Split opening
 set splitright
