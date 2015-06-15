@@ -42,3 +42,13 @@ My preferred terminal emulator.
 Plugins are managed by [pathogen](https://github.com/tpope/vim-pathogen).  Each
 plugin that I use are defined in submodules within the `vim` directory.
 
+## Other files
+I prefer to have the keymapping between capslock and esc reversed.  This can be
+acheived in the console by 
+```bash
+sudo loadkeys swap_esc_capslock.kmap
+```
+See [this superuser.com post](superuser.com/question/290115/how-to-change-console-keymap-in-linux) 
+for details.  For the GUI I tend to stick with the manual settings through the
+system settings gui.
+
