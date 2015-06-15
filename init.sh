@@ -1,15 +1,32 @@
 #!/bin/bash
 
 dir=$HOME/dotfiles
+bkupdir=$HOME/dotfile.bkup
+mkdir -p $bkupdir
 
-# Set softlinks
+# if a .file exists, mv to the backup directory.
+# create a softlink either way
+
+# terminator
+if [ -f $HOME/.config/terminator/config ]; then
+  mv $HOME/.config/terminator/config $bkupdir/terminator.config
+fi
+
 ln -s $dir/terminator.conf $HOME/.config/terminator/config
-ln -s $dir/vim             $HOME/.vim
-ln -s $dir/vimrc           $HOME/.vimrc
-ln -s $dir/bashrc          $HOME/.bashrc
-ln -s $dir/bashrc_aliases  $HOME/.bashrc_aliases
-ln -s $dir/git-prompt.sh   $HOME/.git-prompt.sh
-ln -s $dir/tmux.conf       $HOME/.tmux.conf
+
+# All other files can be looped over 
+for file in bashrc bash_aliases git-prompt.sh tmux.conf vim vimrc 
+do
+    filename=$(basename $file)
+            echo $file
+    if [[ "$filename" != "$(basename $0)" ]]; then
+        echo "Creating link for .$filename"
+        # Move existing dotfile to $backup
+        mv $HOME/.$filename $bkupdir/
+        # Create symlink
+        ln -s $dir/$filename $HOME/.$filename
+    fi
+done 
 
 # Pull in submodules
 git submodule init && git submodule update
