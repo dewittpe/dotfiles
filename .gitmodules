@@ -19,3 +19,6 @@
 [submodule "vim/bundle/Align"]
 	path = vim/bundle/Align
 	url = git@github.com:vim-scripts/Align
+[submodule "vim/bundle/vim-online-thesaurus"]
+	path = vim/bundle/vim-online-thesaurus
+	url = git@github.com:beloglazov/vim-online-thesaurus.git
