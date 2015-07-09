@@ -22,6 +22,7 @@ set wildmenu
 set number
 set nospell
 set ruler
+set nowrap
 
 " formatting options
 set textwidth=80

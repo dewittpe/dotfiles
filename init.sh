@@ -15,7 +15,7 @@ fi
 ln -s $dir/terminator.conf $HOME/.config/terminator/config
 
 # All other files can be looped over 
-for file in bashrc bash_aliases dircolors git-prompt.sh tmux.conf vim vimrc 
+for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf vim vimrc 
 do
     filename=$(basename $file)
             echo $file
