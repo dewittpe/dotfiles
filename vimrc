@@ -59,6 +59,11 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 " ------------------------------------------------------------------------------
+" showmarks
+" ------------------------------------------------------------------------------
+let showmarks_enable = 0
+
+" ------------------------------------------------------------------------------
 " Set up for vim-r-plugin
 " ------------------------------------------------------------------------------
 set nocompatible
@@ -71,6 +76,7 @@ let vimrplugin_vsplit = 0
 let g:ScreenImpl = 'Tmux'
 "let g:ScreenShellWidth = 110 
 let vimrplugin_r_args = "--no-save --quiet"
+let vimrplugin_vim_wd = 1
 
 " Lines added by the Vim-R-plugin command :RpluginConfig (2014-Sep-27 14:46):
 " Use Ctrl+Space to do omnicompletion:
