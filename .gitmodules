@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-online-thesaurus"]
 	path = vim/bundle/vim-online-thesaurus
 	url = git@github.com:beloglazov/vim-online-thesaurus.git
+[submodule "terminal_markdown_viewer"]
+	path = terminal_markdown_viewer
+	url = git@github.com:axiros/terminal_markdown_viewer
