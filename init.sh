@@ -28,5 +28,8 @@ do
     fi
 done 
 
+# terminal markdown viewer set up
+ln -s $dir/terminal_markdown_viewer/mdv.py $HOME/bin/mdv
+
 # Pull in submodules
 git submodule init && git submodule update
