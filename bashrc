@@ -5,7 +5,7 @@
 # Run TMUX when starting a new bash shell
 # https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && exec tmux -2
 
 # If not running interactively, don't do anything
 case $- in
