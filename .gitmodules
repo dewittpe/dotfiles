@@ -25,3 +25,6 @@
 [submodule "terminal_markdown_viewer"]
 	path = terminal_markdown_viewer
 	url = git@github.com:axiros/terminal_markdown_viewer
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline
