@@ -28,6 +28,9 @@ set nowrap
 set textwidth=80
 set formatoptions+=rc
 
+" crtl-a and crtl-x will now work as expected for numbers with leading zeros
+set nrformats-=octal
+
 " Local leader is set to a comma because the standard backlash is annoying when
 " working in .Rnw files
 let maplocalleader = ","
