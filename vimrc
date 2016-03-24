@@ -42,11 +42,6 @@ set hlsearch
 " Enable and disable search highlighting
 nmap <leader>q :set hlsearch!<CR>
 
-" for the rare time I'm using gVim
-if has('gui_running')
-  colorscheme vividchalk
-endif
-
 " Code Folding options
 set foldmethod=indent
 set foldlevel=3
