@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
-[submodule "vim/bundle/vim-r-plugin"]
-	path = vim/bundle/vim-r-plugin
-	url = git@github.com:vim-scripts/Vim-R-plugin.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git@github.com:ervandew/supertab
@@ -28,6 +25,3 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline
-[submodule "vim/vimcom"]
-	path = vim/vimcom
-	url = git@github.com:jalvesaq/vimcom.git
