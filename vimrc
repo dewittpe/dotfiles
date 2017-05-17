@@ -74,23 +74,13 @@ let showmarks_enable = 0
 " ------------------------------------------------------------------------------
 set nocompatible
 
-let vimrplugin_term = "terminator" 
-let vimrplugin_assign = 0 
-let vimrplugin_objbr_w = 30
-let vimrplugin_objbr_place = "console,right" 
-let vimrplugin_vsplit = 0
-let g:ScreenImpl = 'Tmux'
-"let g:ScreenShellWidth = 110 
-let vimrplugin_r_args = "--no-save --quiet"
-let vimrplugin_vim_wd = 1
+"let R_term = "gnome-terminal"
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
 
-" Lines added by the Vim-R-plugin command :RpluginConfig (2014-Sep-27 14:46):
-" Use Ctrl+Space to do omnicompletion:
-if has("gui_running")
-    inoremap <C-Space> <C-x><C-o>
-else
-    inoremap <Nul> <C-x><C-o>
-endif
+
+
 
 " ------------------------------------------------------------------------------
 " end of file
