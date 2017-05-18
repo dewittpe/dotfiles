@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=$HOME/dotfiles
-bkupdir=$HOME/dotfile.bkup
+bkupdir=$HOME/dotfiles.bkup
 mkdir -p $bkupdir
 
 # if a .file exists, mv to the backup directory.
@@ -15,7 +15,7 @@ fi
 ln -s $dir/terminator.conf $HOME/.config/terminator/config
 
 # All other files can be looped over 
-for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf vim vimrc 
+for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf
 do
     filename=$(basename $file)
             echo $file
@@ -28,8 +28,10 @@ do
     fi
 done 
 
-# terminal markdown viewer set up
-ln -s $dir/terminal_markdown_viewer/mdv.py $HOME/bin/mdv
+# Neovim
+mkdir -p $HOME/.config/nvim
+ln -s $dir/vim/bundle $HOME/.config/nvim/bundle
+ln -s $dir/init.vim $HOME/.config/nvim/init.vim
 
 # Pull in submodules
 git submodule init && git submodule update
