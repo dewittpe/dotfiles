@@ -12,6 +12,7 @@ if [ -f $HOME/.config/terminator/config ]; then
   mv $HOME/.config/terminator/config $bkupdir/terminator.config
 fi
 
+mkdir -p $HOME/.config/terminator
 ln -s $dir/terminator.conf $HOME/.config/terminator/config
 
 # All other files can be looped over 
