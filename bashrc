@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# PATH
+PATH=$HOME/.local/bin:$PATH
+
 # Run TMUX when starting a new bash shell
 # https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
 [[ $- != *i* ]] && return
