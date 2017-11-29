@@ -15,6 +15,9 @@ fi
 mkdir -p $HOME/.config/terminator
 ln -s $dir/terminator.conf $HOME/.config/terminator/config
 
+mkdir -p $HOME/.R
+ln -s $dir/R-Makevars $HOME/.R/Makevars
+
 # All other files can be looped over 
 for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf
 do
