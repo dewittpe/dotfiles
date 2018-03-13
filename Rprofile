@@ -1,7 +1,7 @@
 .First <- function() {
   if (interactive()) {
-    options(repos = c(CRAN = "http://cran.rstudio.com"))
-    # options(stringsAsFactors = FALSE)
+    options(repos = c(CRAN = "https://cran.rstudio.com",
+                      BIOC = "https://bioconductor.org/packages/release/bioc/"))
     library(colorout)
   }
 }
