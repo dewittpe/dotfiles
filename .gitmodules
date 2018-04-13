@@ -28,3 +28,9 @@
 [submodule "vim/bundle/Nvim-R"]
 	path = vim/bundle/Nvim-R
 	url = https://github.com/jalvesaq/Nvim-R
+[submodule "vim/bundle/vim-wordy"]
+	path = vim/bundle/vim-wordy
+	url = https://github.com/reedes/vim-wordy
+[submodule "vim/bundle/vim-dict"]
+	path = vim/bundle/vim-dict
+	url = https://github.com/szw/vim-dict
