@@ -43,7 +43,7 @@ set hlsearch
 nmap <leader>q :set hlsearch!<CR>
 
 " Code Folding options
-set foldmethod=indent
+set foldmethod=marker
 set foldlevel=3
 
 " Split opening

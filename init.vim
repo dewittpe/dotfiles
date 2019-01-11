@@ -35,13 +35,14 @@ hi DiffDelete    ctermfg=196  ctermbg=88   cterm=NONE
 hi DiffText      ctermfg=16   ctermbg=214  cterm=NONE
 
 hi SpellBad cterm=underline,bold ctermbg=red ctermfg=white
+hi Folded ctermbg=NONE
 
 set hlsearch
 " Enable and disable search highlighting
 nmap <leader>q :set hlsearch!<CR>
 
 " Code Folding options
-set foldmethod=syntax
+set foldmethod=marker
 set foldlevel=4
 
 " Split opening
@@ -73,6 +74,7 @@ let R_args = ['--no-save', '--no-restore', '--quiet']
 let Rout_more_colors = 1
 let R_insert_mode_cmds = 1
 let R_rconsole_width = 0
+let R_nvim_wd = 1
 
 " ------------------------------------------------------------------------------
 " end of file
