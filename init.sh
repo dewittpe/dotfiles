@@ -19,7 +19,7 @@ mkdir -p $HOME/.R
 ln -s $dir/R-Makevars $HOME/.R/Makevars
 
 # All other files can be looped over 
-for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf
+for file in bashrc bash_aliases dircolors git-prompt.sh Rprofile tmux.conf gitmessage
 do
     filename=$(basename $file)
             echo $file

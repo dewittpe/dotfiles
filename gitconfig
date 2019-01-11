@@ -19,3 +19,6 @@
 
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd l' -c 'wincmd l' -c 'wincmd l' -c 'wincmd J'
+[commit]
+	gpgsign = true
+  template = ~/.gitmessage
