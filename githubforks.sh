@@ -30,9 +30,13 @@ else
   name=$1
 fi
 
-userrepo=($(git remote get-url --all $name | gawk -v FS=':' '{print $2}'))
+userrepo=($(git remote get-url --all $name | gawk -v FS=':' '{print $2}' | gawk -v FS=".git" '{print $1}'))
+
+echo $userrepo
 
 URLS=($(curl https://api.github.com/repos/$userrepo/forks | grep "ssh_url" | gawk -v FS='"' '{print $4}'))
+
+echo ${URLS[*]}
 
 for i in "${URLS[@]}"
 do
