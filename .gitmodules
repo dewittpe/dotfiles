@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-dict"]
 	path = vim/bundle/vim-dict
 	url = https://github.com/szw/vim-dict
+[submodule "vim/bundle/vimcmdline"]
+	path = vim/bundle/vimcmdline
+	url = https://github.com/jalvesaq/vimcmdline
