@@ -27,6 +27,7 @@ set expandtab
 " formatting options
 set textwidth=80
 set formatoptions+=rc
+set scrolloff=3
 
 " Highlighting
 hi DiffAdd       ctermfg=231  ctermbg=22   cterm=NONE
@@ -47,7 +48,7 @@ set foldlevel=4
 
 " Split opening
 set splitright
-"set splitbelow
+set splitbelow
 
 " Ctrl-<hjkl> to move windows
 noremap <C-h> <C-w>h
@@ -75,6 +76,18 @@ let Rout_more_colors = 1
 let R_insert_mode_cmds = 1
 let R_rconsole_width = 0
 let R_nvim_wd = 1
+
+" Setup Vim to use the remote R only if the output of df includes
+" the string 'remoteR', that is, the remote file system is mounted:
+      if system('df') =~ 'remoteR'
+          let $NVIM_IP_ADDRESS = substitute(system("hostname -I"), " .*", "", "")
+          let R_app = '/home/peterdewitt/bin/sshR'
+          let R_cmd = '/home/peterdewitt/bin/sshR'
+          let R_compldir = '/home/peterdewitt/.remoteR/NvimR_cache'
+          let R_tmpdir = '/home/peterdewitt/.remoteR/NvimR_cache/tmp'
+          let R_remote_tmpdir = '/home/dewittp/.cache/NvimR_cache/tmp'
+          let R_nvimcom_home = '/home/peterdewitt/.remoteR/R_library/nvimcom'
+      endif
 
 " ------------------------------------------------------------------------------
 " end of file
