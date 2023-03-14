@@ -43,12 +43,14 @@ set hlsearch
 nmap <leader>q :set hlsearch!<CR>
 
 " Code Folding options
-set foldmethod=marker
-set foldlevel=4
+"set foldmethod=marker
+"set foldlevel=4
+set foldmethod=indent
+set foldlevel=2
 
 " Split opening
 set splitright
-set splitbelow
+"set splitbelow
 
 " Ctrl-<hjkl> to move windows
 noremap <C-h> <C-w>h
@@ -70,7 +72,7 @@ set t_Co=256
 set nocompatible
 
 let R_hl_term = 0
-let R_assign = 0
+let R_assign = 2
 let R_args = ['--no-save', '--no-restore', '--quiet']
 let Rout_more_colors = 1
 let R_insert_mode_cmds = 1
