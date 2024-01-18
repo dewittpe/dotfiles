@@ -7,10 +7,10 @@ PATH=$HOME/.local/bin:$PATH
 
 # Run TMUX when starting a new bash shell
 # https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
-if [[ -n $(command -v tmux) ]]; then
-  [[ $- != *i* ]] && return
-  [[ -z "$TMUX" ]] && exec tmux -2
-fi
+#if [[ -n $(command -v tmux) ]]; then
+#  [[ $- != *i* ]] && return
+#  [[ -z "$TMUX" ]] && exec tmux -2
+#fi
 
 # If not running interactively, don't do anything
 case $- in
