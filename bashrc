@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export GPG_TTY=$(tty)
+
 # PATH
 PATH=$HOME/.local/bin:$PATH
 
