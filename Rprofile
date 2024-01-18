@@ -8,3 +8,7 @@
     library(colorout)
   }
 }
+
+q <- quit <- function(save = "no", ...) {
+  base::quit(save = save, ...)
+}
