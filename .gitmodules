@@ -25,9 +25,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/Nvim-R"]
-	path = vim/bundle/Nvim-R
-	url = https://github.com/jalvesaq/Nvim-R
 [submodule "vim/bundle/vim-wordy"]
 	path = vim/bundle/vim-wordy
 	url = https://github.com/reedes/vim-wordy
@@ -37,3 +34,6 @@
 [submodule "vim/bundle/vimcmdline"]
 	path = vim/bundle/vimcmdline
 	url = https://github.com/jalvesaq/vimcmdline
+[submodule "vim/bundle/R.nvim"]
+	path = vim/bundle/R.nvim
+	url = git@github.com:R-nvim/R.nvim.git
