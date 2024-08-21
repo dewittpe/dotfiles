@@ -8,6 +8,7 @@ export GPG_TTY=$(tty)
 MANPATH=$HOME/.local/texmf-dist/doc/man:$MANPATH
 INFOPATH=$HOME/.local/texmf-dist/doc/info:$INFOPATH
 PATH=$HOME/.local/bin:$HOME/.local/bin/x86_64-linux:$PATH
+PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
 # If not running interactively, don't do anything
 case $- in
@@ -129,3 +130,5 @@ fi
 if [ -f $HOME/.conda_initialize ]; then
   source $HOME/.conda_initialize
 fi
+
+source "$HOME/.cargo/env"
