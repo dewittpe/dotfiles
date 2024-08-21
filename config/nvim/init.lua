@@ -48,7 +48,7 @@ vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
 
-vim.cmd [[colorscheme vim]]
+vim.cmd [[colorscheme gruvbox]]
 
 -- Split opening
 vim.cmd[[set splitright]]
