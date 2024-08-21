@@ -7,8 +7,8 @@
             datatable.print.class = TRUE)
     library(colorout)
   }
-}
 
-q <- quit <- function(save = "no", ...) {
-  base::quit(save = save, ...)
+  if (interactive() && Sys.getenv("NVIM_IP_ADDRESS") != "") {
+    Sys.setenv("R_IP_ADDRESS" = trimws(system("hostname -I", intern = TRUE)))
+  }
 }
