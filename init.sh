@@ -64,4 +64,9 @@ if [ -f $HOME/.bashrc ]; then
 fi
 ln -s $dir/bashrc $HOME/.bashrc
 
+if [ -f $HOME/.zshrc ]; then
+  mv $HOME/.zshrc $bkupdir/zshrc_$dt
+fi
+ln -s $dir/zshrc $HOME/.zshrc
+
 # eof
