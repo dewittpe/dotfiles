@@ -33,9 +33,9 @@ do
 done 
 
 # Neovim
-mkdir -p $HOME/.config/nvim
-ln -s $dir/vim/bundle $HOME/.config/nvim/bundle
-ln -s $dir/init.vim $HOME/.config/nvim/init.vim
+# mkdir -p $HOME/.config/nvim
+#ln -s $dir/vim/bundle $HOME/.config/nvim/bundle
+#ln -s $dir/init.vim $HOME/.config/nvim/init.vim
 
 # Pull in submodules
-git submodule init && git submodule update
+#git submodule init && git submodule update
