@@ -2,6 +2,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
+-- disable netrw is strongly recommended for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set your global variables and options above this line --
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

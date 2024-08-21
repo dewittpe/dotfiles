@@ -50,17 +50,19 @@ esac
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
 
-source $HOME/dotfiles/git-prompt.sh
+source $HOME/.git-prompt.sh
+source $HOME/.git-completion.bash
+source $HOME/.subversion-prompt
 if [ "$color_prompt" = yes ]; then
 PS1='\n${debian_chroot:+($debian_chroot)}\[\033[00;35m\]\u@\h \[\033[01;34m\][\w] \[\033[00m\]\[\033[01;32m\]$(__git_ps1 " (%s) ")$(__svn_stat)\[\033[00m\]\n$ '
 else
@@ -96,7 +98,7 @@ alias l='ls -CF'
 
 # additional aliases
 alias rm='rm -i'
-alias tree='tree --dirsfirst --charset ascii' 
+alias tree='tree --dirsfirst --charset ascii'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -120,4 +122,10 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# conda initialize
+# This will be a machine specific so modify the noted file
+if [ -f $HOME/.conda_initialize ]; then
+  source $HOME/.conda_initialize
 fi
