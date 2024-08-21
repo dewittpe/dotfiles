@@ -5,14 +5,9 @@
 export GPG_TTY=$(tty)
 
 # PATH
-PATH=$HOME/.local/bin:$PATH
-
-# Run TMUX when starting a new bash shell
-# https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
-#if [[ -n $(command -v tmux) ]]; then
-#  [[ $- != *i* ]] && return
-#  [[ -z "$TMUX" ]] && exec tmux -2
-#fi
+MANPATH=$HOME/.local/texmf-dist/doc/man:$MANPATH
+INFOPATH=$HOME/.local/texmf-dist/doc/info:$INFOPATH
+PATH=$HOME/.local/bin:$HOME/.local/bin/x86_64-linux:$PATH
 
 # If not running interactively, don't do anything
 case $- in
@@ -38,9 +33,6 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -69,9 +61,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 source $HOME/dotfiles/git-prompt.sh
-source $HOME/dotfiles/subversion-prompt
 if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1='\n${debian_chroot:+($debian_chroot)}\[\033[00;35m\]\u@\h \[\033[01;34m\][\w] \[\033[00m\]\[\033[01;32m\]$(__git_ps1 " (%s) ")$(__svn_stat)\[\033[00m\]\n$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -103,6 +93,10 @@ fi
 alias ll='ls -hl --group-directories-first'
 alias la='ls -AXh'
 alias l='ls -CF'
+
+# additional aliases
+alias rm='rm -i'
+alias tree='tree --dirsfirst --charset ascii' 
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

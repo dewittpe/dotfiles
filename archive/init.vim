@@ -22,8 +22,6 @@ set nowrap
 
 " Deal with tabs
 set tabstop=2
-set shiftwidth=2
-set expandtab
 
 " formatting options
 set textwidth=80
@@ -70,17 +68,24 @@ set t_Co=256
 " ------------------------------------------------------------------------------
 " Set up for Nvim-r plugin
 " ------------------------------------------------------------------------------
-set nocompatible
-
-let R_hl_term = 0
-let R_args = ['--no-save', '--no-restore', '--quiet']
-let Rout_more_colors = 1
-let R_insert_mode_cmds = 1
-let R_rconsole_width = 0
-let R_rconsole_height = 15
-let R_nvim_wd = 1
-let R_assign = 0
-
+" set nocompatible
+" 
+" let R_hl_term = 0
+" let R_args = ['--no-save', '--no-restore', '--quiet']
+" let Rout_more_colors = 1
+" let R_insert_mode_cmds = 1
+" let R_rconsole_width = 0
+" let R_rconsole_height = 15
+" let R_nvim_wd = 1
+" let R_assign = 0
+" 
+" " set vim-r-plugin to 
+" let r_indent_align_args = 1
+" 
+" " Set vim-r-plugin to mimics ess :
+" let r_indent_ess_comments = 0
+" let r_indent_ess_compatible = 0
+" 
 " Setup Vim to use the remote R only if the output of df includes
 " the string 'remoteR', that is, the remote file system is mounted:
 "      if system('df') =~ 'remoteR'
@@ -93,5 +98,5 @@ let R_assign = 0
 "          let R_nvimcom_home = '/home/peterdewitt/.remoteR/R_library/nvimcom'
 "      endif
 
-" ------------------------------------------------------------------------------
 " end of file
+" ------------------------------------------------------------------------------
