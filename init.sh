@@ -34,35 +34,34 @@ done
 ###############################################################################
 # Neovim
 if [ -L $HOME/.config/nvim ]; then
-  echo "$HOME/.config/nvim is already a symbolic link"
+  echo "$HOME/.config/nvim is an existing symbolic link"
 elif [ -d $HOME/.config/nvim ]; then
-  echo "$HOME/.config/nvim is a director and exists"
+  echo "$HOME/.config/nvim is an existing directory"
 else
   ln -s $dir/config/nvim $HOME/.config/nvim
+    echo "symbolic link $HOME/.config/nvim has been created"
 fi
 
 ###############################################################################
-# bash
+# R
+
+for file in Rprofile
+do
+  if [ -L $HOME/.$file ]; then
+    echo "$HOME/.$file is an existing symbolic link"
+  elif [ -d $HOME/.$file ]; then
+    echo "$HOME/.$file is an existing file"
+  else
+    ln -s $dir/$file $HOME/.$file
+    echo "symbolic link $HOME/.$file has been created"
+  fi
+done
+
+###############################################################################
+# shell rc
 if [ -f $HOME/.bashrc ]; then
   mv $HOME/.bashrc $bkupdir/bashrc_$dt
 fi
 ln -s $dir/bashrc $HOME/.bashrc
 
-
-# if a .file exists, mv to the backup directory.
-# create a softlink either way
-
-# All other files can be looped over
-#for file in bashrc dircolors git-prompt.sh Rprofile tmux.conf gitmessage
-#do
-    #filename=$(basename $file)
-            #echo $file
-    #if [[ "$filename" != "$(basename $0)" ]]; then
-        #echo "Creating link for .$filename"
-        ## Move existing dotfile to $backup
-        #mv $HOME/.$filename $bkupdir/
-        ## Create symlink
-        #ln -s $dir/$filename $HOME/.$filename
-    #fi
-#done
-
+# eof
