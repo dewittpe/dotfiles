@@ -11,6 +11,7 @@ return {
                 min_editor_width = 92,
                 rconsole_width = 0,
                 rconsole_height= 25,
+                nvimpager = "split_v",
 	}
     require("r").setup(opts)
     require("r.pdf.generic").open = vim.ui.open
