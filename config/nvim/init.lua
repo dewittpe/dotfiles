@@ -27,6 +27,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 --vim.o.formatoptions = '+=rc'
 vim.cmd[[set formatoptions+=rc]]
+vim.o.wrap = false
 vim.o.textwidth = 80
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
@@ -62,4 +63,20 @@ vim.cmd [[noremap <C-l> <C-w>l]]
 
 -- vim-airline
 vim.cmd[[set t_Co=256]]
+
+-- Set up for markdown files to allow for long lines and intuitive navigation
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.showbreak = "↪ "
+    vim.keymap.set('n', 'j', 'gj', { buffer = true, noremap = true, silent = true })
+    vim.keymap.set('n', 'k', 'gk', { buffer = true, noremap = true, silent = true })
+    vim.keymap.set('x', 'j', 'gj', { buffer = true, noremap = true, silent = true })
+    vim.keymap.set('x', 'k', 'gk', { buffer = true, noremap = true, silent = true })
+    vim.keymap.set('o', 'j', 'gj', { buffer = true, noremap = true, silent = true })
+    vim.keymap.set('o', 'k', 'gk', { buffer = true, noremap = true, silent = true })
+  end
+})
 
