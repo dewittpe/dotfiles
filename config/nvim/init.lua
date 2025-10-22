@@ -80,3 +80,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+-- use to spaces for R-family buffers
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "r", "rmd", "rnoweb", "quarto" },
+  callback = function()
+    vim.bo.expandtab  = true
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop    = 2
+    vim.bo.softtabstop = 2
+  end,
+})

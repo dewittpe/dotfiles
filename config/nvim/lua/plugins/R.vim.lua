@@ -6,6 +6,7 @@ return {
   },
   config = function(_, opts)
     vim.g.rout_follow_colorscheme = true
+    vim.g.r_indent_align_args = 0
     local opts = {
                 R_args = {"--quiet", "--no-save", "--no-restore"},
                 min_editor_width = 92,
