@@ -4,6 +4,8 @@
 
 export GPG_TTY=$(tty)
 
+[[ -f "$HOME/.config/shell/env" ]] && source "$HOME/.config/shell/env"
+
 # PATH
 MANPATH=$HOME/.local/texmf-dist/doc/man:$MANPATH
 INFOPATH=$HOME/.local/texmf-dist/doc/info:$INFOPATH
@@ -131,4 +133,4 @@ if [ -f $HOME/.conda_initialize ]; then
   source $HOME/.conda_initialize
 fi
 
-source "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
