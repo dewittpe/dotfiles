@@ -95,9 +95,6 @@ git config --global user.signingkey <KEYID>
   `~/google-cloud-sdk/completion.zsh.inc` are optionally sourced by `zsh` if
   the Google Cloud SDK is installed.
 
-## tmux
-
-
 ## NOTES:
 
 ### Copy GPG Keys
