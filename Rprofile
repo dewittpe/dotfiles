@@ -7,10 +7,16 @@
             datatable.print.nrows = 10,
             datatable.print.class = TRUE
     )
-    library(colorout)
-  }
-
-  if (interactive() && Sys.getenv("NVIM_IP_ADDRESS") != "") {
-    Sys.setenv("R_IP_ADDRESS" = trimws(system("hostname -I", intern = TRUE)))
+    if (requireNamespace("colorout", quietly = TRUE)) {
+      library(colorout)
+    } else {
+      packageStartupMessage(
+        paste(
+          "Package 'colorout' is not installed.",
+          "Install it from GitHub with:",
+          "remotes::install_github('jalvesaq/colorout')"
+        )
+      )
+    }
   }
 }
