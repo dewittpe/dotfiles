@@ -9,6 +9,30 @@ bkupdir=$HOME/dotfiles.bkup
 mkdir -p $bkupdir
 mkdir -p $HOME/.config/
 
+backup_path() {
+  local target=$1
+  local label=$2
+
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    mv "$target" "$bkupdir/${label}_$dt"
+    echo "$target backed up to $bkupdir/${label}_$dt"
+  fi
+}
+
+link_path() {
+  local source=$1
+  local target=$2
+  local label=$3
+
+  if [ -L "$target" ]; then
+    echo "$target is an existing symbolic link"
+  else
+    backup_path "$target" "$label"
+    ln -s "$source" "$target"
+    echo "symbolic link $target has been created"
+  fi
+}
+
 ###############################################################################
 # git
 
@@ -21,52 +45,25 @@ fi
 
 for file in git-prompt.sh git-completion.bash git-completion.zsh git-completion.tcsh gitmessage subversion-prompt
 do
-  if [ -L $HOME/.$file ]; then
-    echo "$HOME/.$file is an existing symbolic link"
-  elif [ -d $HOME/.$file ]; then
-    echo "$HOME/.$file is an existing file"
-  else
-    ln -s $dir/git_config/$file $HOME/.$file
-    echo "symbolic link $HOME/.$file has been created"
-  fi
+  link_path "$dir/git_config/$file" "$HOME/.$file" "$file"
 done
 
 ###############################################################################
 # Neovim
-if [ -L $HOME/.config/nvim ]; then
-  echo "$HOME/.config/nvim is an existing symbolic link"
-elif [ -d $HOME/.config/nvim ]; then
-  echo "$HOME/.config/nvim is an existing directory"
-else
-  ln -s $dir/config/nvim $HOME/.config/nvim
-    echo "symbolic link $HOME/.config/nvim has been created"
-fi
+link_path "$dir/config/nvim" "$HOME/.config/nvim" "config_nvim"
 
 ###############################################################################
 # R
 
 for file in Rprofile
 do
-  if [ -L $HOME/.$file ]; then
-    echo "$HOME/.$file is an existing symbolic link"
-  elif [ -d $HOME/.$file ]; then
-    echo "$HOME/.$file is an existing file"
-  else
-    ln -s $dir/$file $HOME/.$file
-    echo "symbolic link $HOME/.$file has been created"
-  fi
+  link_path "$dir/$file" "$HOME/.$file" "$file"
 done
 
 ###############################################################################
 # shell rc
-if [ -f $HOME/.bashrc ]; then
-  mv $HOME/.bashrc $bkupdir/bashrc_$dt
-fi
-ln -s $dir/bashrc $HOME/.bashrc
+link_path "$dir/bashrc" "$HOME/.bashrc" "bashrc"
 
-if [ -f $HOME/.zshrc ]; then
-  mv $HOME/.zshrc $bkupdir/zshrc_$dt
-fi
-ln -s $dir/zshrc $HOME/.zshrc
+link_path "$dir/zshrc" "$HOME/.zshrc" "zshrc"
 
 # eof
