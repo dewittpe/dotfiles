@@ -1,5 +1,6 @@
 return {
   "R-nvim/R.nvim",
+  tag = "v0.99.0",
   lazy = false,
   opts = {
     -- Create a table with the options to be passed to setup()
